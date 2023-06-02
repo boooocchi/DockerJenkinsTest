@@ -1,0 +1,13 @@
+FROM node:alpine
+
+WORKDIR /dockertest
+
+COPY package*.json ./
+COPY index.html ./
+COPY server.js ./
+
+RUN npm install
+
+EXPOSE 8010
+
+CMD ["node","server.js"]
